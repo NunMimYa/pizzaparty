@@ -1,0 +1,24 @@
+<h2>La liste des pizzas</h2>
+<ul>
+  <li *ngFor="let pizza of mesPizzas" (click)="onSelect(pizza)">
+    {{ pizza.name }}
+  </li>
+</ul>
+
+
+<div class=container>
+  <div class="row">
+    <div *ngIf="maSuperPizza">
+      <h2>{{ maSuperPizza.name }}</h2>
+      <p class="d-block">ID : {{ maSuperPizza.id }}</p>
+      <p class="d-block">Price: {{ maSuperPizza.price }}</p>
+      <!-- <img src="assets/img/pizzas/{{ maSuperPizza.image }}" alt=""> -->
+      <img [src]="'assets/img/pizzas/' + maSuperPizza.image " [alt]="maSuperPizza.name">
+
+
+      <input [(ngModel)]="maSuperPizza.name">
+      <!-- keyup -> quand l'utilisateur relâche la touche -->
+      <!-- <input #input [value] ="maSuperPizza.name" (keyup)="maSuperPizza.name = input.value"> -->
+    </div>
+  </div>
+</div>
