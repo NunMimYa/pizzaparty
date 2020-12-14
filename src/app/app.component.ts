@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Pizza } from './pizza';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'pizzaparty';
+  title = 'Pizza Party';
+  name = '4 Fromages';
+
+  maSuperPizza: Pizza = {
+    id:1,
+    name: '4 Fromages',
+    price: 12, 
+    image: '4-fromages.jpg'
+  };
+
 }
