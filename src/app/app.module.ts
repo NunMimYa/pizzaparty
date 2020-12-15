@@ -14,15 +14,14 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     PizzaListComponent,
     MenuComponent,
-    HomeComponent, 
-    
-  ],
+    HomeComponent,    
+  ],  
   imports: [
     BrowserModule,
     FormsModule, 
     NgbModule, 
     RouterModule.forRoot([
-      {path: '', component: PizzaListComponent },
+      {path: '', component: HomeComponent },
       {path: 'pizzas', component: PizzaListComponent },
     ])
   ],
