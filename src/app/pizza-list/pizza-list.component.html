@@ -24,8 +24,8 @@
   <div class="col-lg-3" *ngFor="let pizza of mesPizzas" (click)="onSelect(pizza)">
     <div class="card" [class.selected]="pizza === maSuperPizza">
       <img [src]="'assets/img/pizzas/' + pizza.image " [alt]="pizza.name" class="card-img-top">
-      <div class="card-body"> </div>
-      {{ pizza.name }}
+      <div class="card-body">{{ pizza.name }}</div>
+      
     </div>
   </div>
 </div>

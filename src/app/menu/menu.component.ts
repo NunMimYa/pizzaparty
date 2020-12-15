@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -7,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
   isCollapsed = false;
+  // @Input() navTitle;
+  @Input() navTitle: string;
+  @Input() color = 'light';
+
+  changeTheme(){
+    if (this.color === 'light'){
+      this.color = 'dark';
+    } else {
+      this.color = 'light';
+    }
+  }
 
   toggleCollapseNavbar(){
     console.log('test');
