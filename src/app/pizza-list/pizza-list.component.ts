@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pizza } from '../pizza';
+import { PizzaService } from '../services/pizza.service';
 
 @Component({
   selector: 'app-pizza-list',
@@ -9,12 +10,7 @@ import { Pizza } from '../pizza';
 export class PizzaListComponent implements OnInit {
   maSuperPizza: Pizza;
 
-  mesPizzas: Pizza[] = [
-    {id:1, name:'Reine', price: 12, image:'reine.jpg'},
-    {id:2, name:'4 fromages', price: 13, image:'4-fromages.jpg'},
-    {id:3, name:'Orientale', price: 11, image:'orientale.jpg'},
-    {id:4, name:'Cannibale', price: 9, image:'cannibale.jpg'},
-  ];
+  mesPizzas: Pizza[];
 
   // On peut créer une fonction / une méthode
   onSelect(pizza: Pizza){
@@ -25,9 +21,20 @@ export class PizzaListComponent implements OnInit {
     // console.log(this.mesPizzas.name);
   }
 
-  constructor() { }
+  constructor(private pizzaService: PizzaService) { }
 
   ngOnInit(): void {
+     // console.log(this.pizzaService.getPizzas());
+     // ici, on touche au DOM
+    //  let self = this;
+    //  this.pizzaService.getPizzas().then(function (pizzas) {
+    //   //  console.log(pizzas);
+    //   // this.mesPizzas = pizzas;
+    //   self.mesPizzas = pizzas;
+    //   console.log(self);
+    //  });
+     this.pizzaService.getPizzas().then(pizzas => {
+       this.mesPizzas = pizzas;
+     });
   }
-
 }
